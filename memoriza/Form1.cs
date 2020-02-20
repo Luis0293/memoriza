@@ -17,21 +17,23 @@ namespace memoriza
         {
             InitializeComponent();
         }
-        RTFFile MeuTexto = new RTFFile();
 
+        RTFFile MeuTexto = new RTFFile();
         public string path = Application.StartupPath + "\\Resources\\Texto.txt";
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            MeuTexto.Texto = richTextBox1.Text;
+            richTextBox1.Text = MeuTexto.Texto;
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            MeuTexto.Texto = richTextBox1.Text = "";
+           MeuTexto.Texto = richTextBox1.Text = MeuTexto.Reset;
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            MeuTexto.Texto = richTextBox1.Text;
             MeuTexto.Salvar();
         }
     }

@@ -25,15 +25,18 @@ namespace memoriza
             }
         }
 
+        public string Reset
+        {
+            get
+            {
+                return _texto = "";
+            }
+        }
+
+
         public void Salvar()
         {
             File.WriteAllText(_path, _texto);
         }
-
-        public void Reset()
-        {
-            _texto = "";
-        }
-
     }
 }
